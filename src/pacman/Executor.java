@@ -79,8 +79,18 @@ public class Executor
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomLegacy(), visual);
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomlySmart(), visual);
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()), new KamikazeController(), visual);
-		exec.runGameTimed(new HumanController(new KeyBoardInput()), new ConvoyController(), visual);
 		
+		//Same Controller
+//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new ConvoyController(), visual);
+//	    exec.runGameTimed(new HumanController(new KeyBoardInput()), new KamikazeController(), visual);
+//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomLegacy(), visual);
+//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomlySmart(), visual);
+		
+		//All Different Controllers
+//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new AllDiffControllers(), visual);
+		
+		//Combo Of Controllers
+		exec.runGameTimed(new HumanController(new KeyBoardInput()), new ComboControllers(), visual);
 		
 		
 		//*/

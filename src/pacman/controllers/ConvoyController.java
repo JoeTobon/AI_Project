@@ -25,10 +25,12 @@ public class ConvoyController extends Controller<EnumMap<GHOST,MOVE>>
 	{	
 		myMoves.clear();
 		
-		int targetNode=game.getGhostCurrentNodeIndex(GHOST.BLINKY);
+		int targetNode  = game.getGhostCurrentNodeIndex(GHOST.BLINKY);
+		int targetNode2 = game.getPacmanCurrentNodeIndex();
 		
 		if(game.doesGhostRequireAction(GHOST.BLINKY))
-			myMoves.put(GHOST.BLINKY,moves[rnd.nextInt(moves.length)]);
+			myMoves.put(GHOST.BLINKY,
+					game.getApproximateNextMoveTowardsTarget(game.getGhostCurrentNodeIndex(GHOST.BLINKY),targetNode2,game.getGhostLastMoveMade(GHOST.BLINKY),DM.PATH));
 		
 		if(game.doesGhostRequireAction(GHOST.INKY))
 			myMoves.put(GHOST.INKY,
