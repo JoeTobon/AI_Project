@@ -1,5 +1,18 @@
 ConvoyController in use:
-ConvoyController in use:
-ConvoyController in use:
-ConvoyController in use:
-Final Score: 5090
+Final Score: 3810
+Final Time: 1667
+KamikazeController in use:
+Final Score: 30700
+Final Time: 11517
+RandomLegacy Controller in use:
+Final Score: 34350
+Final Time: 12968
+RandomSmart Controller in use:
+Final Score: 36110
+Final Time: 19308
+All AIs are using different Controller in use:
+Final Score: 2560
+Final Time: 724
+AIs are using a combination of different Controller in use:
+Final Score: 18810
+Final Time: 7341

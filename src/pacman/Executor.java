@@ -83,8 +83,8 @@ public class Executor
 		
 		//Same Controller
 		
-		logger.write_to_logger("ConvoyController in use:");
-		exec.runGameTimed(new StarterPacMan(), new ConvoyController(), visual);
+//		logger.write_to_logger("ConvoyController in use:");
+//		exec.runGameTimed(new StarterPacMan(), new ConvoyController(), visual);
 
 //      logger.write_to_logger("KamikazeController in use:");  
 //      exec.runGameTimed(new StarterPacMan(), new KamikazeController(), visual);
