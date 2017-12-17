@@ -16,7 +16,6 @@ import pacman.myLogger;
  * Will assign AI different controllers
  */
 
-
 public class ComboControllers extends Controller<EnumMap<GHOST,MOVE>>
 {
 	private final static int PILL_PROXIMITY = 20;		//if ghost is this close to a power pill, guard it

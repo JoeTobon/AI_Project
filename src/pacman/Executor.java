@@ -52,7 +52,8 @@ public class Executor
 		//intialize logger
 		
 		Executor exec=new Executor();
-
+		myLogger logger = new myLogger();
+		
 		/*
 		//run multiple games in batch mode - good for testing.
 		int numTrials=10;
@@ -81,16 +82,30 @@ public class Executor
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()), new KamikazeController(), visual);
 		
 		//Same Controller
-//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new ConvoyController(), visual);
-//	    exec.runGameTimed(new HumanController(new KeyBoardInput()), new KamikazeController(), visual);
-//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomLegacy(), visual);
-//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new RandomlySmart(), visual);
+		
+		logger.write_to_logger("ConvoyController in use:");
+		exec.runGameTimed(new StarterPacMan(), new ConvoyController(), visual);
+
+//      logger.write_to_logger("KamikazeController in use:");  
+//      exec.runGameTimed(new StarterPacMan(), new KamikazeController(), visual);
+		
+//      logger.write_to_logger("RandomLegacy Controller in use:");
+//		exec.runGameTimed(new StarterPacMan(), new RandomLegacy(), visual);
+		
+//      logger.write_to_logger("RandomSmart Controller in use:");
+//	    exec.runGameTimed(new StarterPacMan(), new RandomlySmart(), visual);
+		
 		
 		//All Different Controllers
-//		exec.runGameTimed(new HumanController(new KeyBoardInput()), new AllDiffControllers(), visual);
+		
+//      logger.write_to_logger("All AIs are using different Controller in use:");
+//		exec.runGameTimed(new StarterPacMan(), new AllDiffControllers(), visual);
+		
 		
 		//Combo Of Controllers
-		exec.runGameTimed(new HumanController(new KeyBoardInput()), new ComboControllers(), visual);
+		
+//      logger.write_to_logger("AIs are using a combination of different Controller in use:");		
+//		exec.runGameTimed(new StarterPacMan(), new ComboControllers(), visual);
 		
 		
 		//*/
@@ -186,6 +201,7 @@ public class Executor
      */
     public void runGameTimed(Controller<MOVE> pacManController,Controller<EnumMap<GHOST,MOVE>> ghostController,boolean visual)
 	{
+    	myLogger logger = new myLogger();
 		Game game=new Game(0);
 		
 		GameView gv=null;
@@ -217,6 +233,19 @@ public class Executor
 	        
 	        if(visual)
 	        	gv.repaint();
+		}
+		
+		if(game.gameOver())
+		{
+			try 
+			{
+				logger.write_to_logger("Final Score: " + game.getScore());
+				logger.write_to_logger("Final Time: "  + game.getTotalTime());
+			} 
+			catch (IOException e) 
+			{
+				System.out.println("Error!");
+			}
 		}
 		
 		pacManController.terminate();

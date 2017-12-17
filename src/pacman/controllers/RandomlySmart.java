@@ -23,7 +23,6 @@ public final class RandomlySmart extends Controller<EnumMap<GHOST,MOVE>>
 	private EnumMap<GHOST,MOVE> moves = new EnumMap<GHOST,MOVE>(GHOST.class);
 	private MOVE[] allMoves=MOVE.values();
 	private Random rnd=new Random();
-	myLogger logger = new myLogger();
 	
 	/* (non-Javadoc)
 	 * @see pacman.controllers.Controller#getMove(pacman.game.Game, long)
@@ -40,30 +39,17 @@ public final class RandomlySmart extends Controller<EnumMap<GHOST,MOVE>>
 				{
 					moves.put(ghost,game.getApproximateNextMoveAwayFromTarget(game.getGhostCurrentNodeIndex(ghost),
 							game.getPacmanCurrentNodeIndex(),game.getGhostLastMoveMade(ghost),DM.PATH));
-					//When moving away
-					try 
-					{
-						logger.write_to_logger(ghost.toString() + ": " + "Running away");
-					} catch (IOException e) 
-					{
-						System.out.println("No work good");
-					}
 				}
 				else
 				{
 					m = rnd.nextInt(allMoves.length);
 					moves.put(ghost,allMoves[m]);
-					
-					try 
-					{
-						logger.write_to_logger(ghost.toString() + ": " + allMoves[m].toString());
-					} catch (IOException e) 
-					{
-						System.out.println("No work good");
-					}
 				}
 			}
 		}
+		
+		
+		
 		
 		return moves;
 	}

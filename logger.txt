@@ -1,17 +1,5 @@
-BLINKY: LEFT
-BLINKY: Running away
-PINKY: Running away
-INKY: RIGHT
-BLINKY: Running away
-INKY: RIGHT
-SUE: RIGHT
-PINKY: Running away
-SUE: UP
-INKY: NEUTRAL
-INKY: LEFT
-SUE: UP
-PINKY: Running away
-SUE: UP
-INKY: RIGHT
-SUE: NEUTRAL
-BLINKY: Running away
+ConvoyController in use:
+ConvoyController in use:
+ConvoyController in use:
+ConvoyController in use:
+Final Score: 5090
