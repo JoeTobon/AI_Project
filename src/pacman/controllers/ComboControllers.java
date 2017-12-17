@@ -63,7 +63,7 @@ public class ComboControllers extends Controller<EnumMap<GHOST,MOVE>>
 			}
 		}	
 			
-		if(game.doesGhostRequireAction(GHOST.PINKY)) //RandomLegacy Controller
+		if(game.doesGhostRequireAction(GHOST.PINKY)) //KamakazeController
 		{
 			if(closeToPower(game, GHOST.PINKY))	//go towards pill if close to power pill
 			{	
